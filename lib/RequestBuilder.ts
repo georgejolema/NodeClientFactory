@@ -16,7 +16,7 @@ export default class RequestBuilder {
         this.params = new RequestCollection();
         this.method = 'GET';
         this.path = '/';
-        this.protocol = 'http';
+        this.protocol = 'http:';
     }
 
     public get Params() {
