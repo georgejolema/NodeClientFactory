@@ -23,7 +23,7 @@ describe('/lib/HttpRequest', () => {
             method: 'GET',
             path: '/api/event/fake_user?page=1',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         };
 
@@ -93,7 +93,7 @@ describe('/lib/HttpRequest', () => {
             method: 'POST',
             path: '/api/event?page=1',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         };
 
@@ -138,7 +138,7 @@ describe('/lib/HttpRequest', () => {
             method: 'GET',
             path: '/api/event/fake_user?page=1',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         };
 

@@ -32,7 +32,7 @@ describe('lib/RequestBuilder', () => {
             method: 'GET',
             path: '/api/event/fake_user?page=1',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         });
     });
@@ -58,7 +58,7 @@ describe('lib/RequestBuilder', () => {
             method: 'GET',
             path: '/api/event/fake_user',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         });
     });
@@ -87,7 +87,7 @@ describe('lib/RequestBuilder', () => {
             method: 'POST',
             path: '/api/event?page=190',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true
         });
 

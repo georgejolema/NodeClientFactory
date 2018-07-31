@@ -64,7 +64,7 @@ describe('lib/index', () => {
             method: 'POST',
             path: '/api/event?page=3',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true 
         }, 'type=fake&value=fake1')).to.be.true;
     });
@@ -84,7 +84,7 @@ describe('lib/index', () => {
             method: 'POST',
             path: '/api/login?username=abc&password=fake1',
             port: 8081,
-            protocol: 'http',
+            protocol: 'http:',
             setHost: true 
         }, '')).to.be.true;
     });

@@ -1,7 +1,7 @@
 const descriptor = {
     host: 'localhost',
     port: 8081,
-    protocol: 'http',
+    protocol: 'http:',
     actions: [
         {
             path:'/test/{id}',
