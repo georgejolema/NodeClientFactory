@@ -28,12 +28,11 @@ describe('lib/RequestBuilder', () => {
                 Authorization: 'Bearer abc',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            host: '10.10.10.10',
+            hostName: '10.10.10.10',
             method: 'GET',
             path: '/api/event/fake_user?page=1',
             port: 8081,
-            protocol: 'http:',
-            setHost: true
+            protocol: 'http:'
         });
     });
 
@@ -54,12 +53,11 @@ describe('lib/RequestBuilder', () => {
                 Authorization: 'Bearer abc',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            host: '10.10.10.10',
+            hostName: '10.10.10.10',
             method: 'GET',
             path: '/api/event/fake_user',
             port: 8081,
-            protocol: 'http:',
-            setHost: true
+            protocol: 'http:'
         });
     });
 
@@ -83,12 +81,11 @@ describe('lib/RequestBuilder', () => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "Content-Length": 18
             },
-            host: '10.10.10.10',
+            hostName: '10.10.10.10',
             method: 'POST',
             path: '/api/event?page=190',
             port: 8081,
-            protocol: 'http:',
-            setHost: true
+            protocol: 'http:'
         });
 
         expect(requestObject.body).to.be.equal('type=asdf&value=78');

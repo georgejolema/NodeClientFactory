@@ -60,12 +60,11 @@ describe('lib/index', () => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Length': 21 
             },
-            host: 'localhost',
+            hostName: 'localhost',
             method: 'POST',
             path: '/api/event?page=3',
             port: 8081,
-            protocol: 'http:',
-            setHost: true 
+            protocol: 'http:'
         }, 'type=fake&value=fake1')).to.be.true;
     });
 
@@ -80,12 +79,11 @@ describe('lib/index', () => {
             headers: { 
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            host: 'localhost',
+            hostName: 'localhost',
             method: 'POST',
             path: '/api/login?username=abc&password=fake1',
             port: 8081,
-            protocol: 'http:',
-            setHost: true 
+            protocol: 'http:'
         }, '')).to.be.true;
     });
 });

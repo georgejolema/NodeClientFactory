@@ -69,12 +69,11 @@ export default class RequestBuilder {
 
         const request = {
             headers,
-            host: this.host,
+            hostName: this.host,
             method: this.method,
             path: path,
             port: this.port,
             protocol: this.protocol,
-            setHost: true
         };
 
         return { request, body };
