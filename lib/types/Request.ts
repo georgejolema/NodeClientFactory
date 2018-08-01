@@ -3,7 +3,7 @@ import http from 'http';
 
 export interface Request {
     protocol: string;
-    host: string;
+    host?: string;
     hostName?: string;
     family?: number;
     port: number;
@@ -15,5 +15,4 @@ export interface Request {
     auth?: string;
     agent?: http.Agent | undefined;
     timeout?: number;
-    setHost: boolean;
 }
