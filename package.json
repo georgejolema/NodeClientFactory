@@ -1,6 +1,6 @@
 {
   "name": "@georgejolema/clientfactory",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library to handle client requests",
   "main": "build/index.js",
   "scripts": {

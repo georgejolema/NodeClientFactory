@@ -4,7 +4,7 @@ import http from 'http';
 export interface Request {
     protocol: string;
     host?: string;
-    hostName?: string;
+    hostname?: string;
     family?: number;
     port: number;
     localAddress?: string;

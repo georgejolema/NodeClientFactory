@@ -60,7 +60,7 @@ describe('lib/index', () => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Length': 21 
             },
-            hostName: 'localhost',
+            hostname: 'localhost',
             method: 'POST',
             path: '/api/event?page=3',
             port: 8081,
@@ -79,7 +79,7 @@ describe('lib/index', () => {
             headers: { 
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            hostName: 'localhost',
+            hostname: 'localhost',
             method: 'POST',
             path: '/api/login?username=abc&password=fake1',
             port: 8081,

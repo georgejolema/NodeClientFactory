@@ -28,7 +28,7 @@ describe('lib/RequestBuilder', () => {
                 Authorization: 'Bearer abc',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            hostName: '10.10.10.10',
+            hostname: '10.10.10.10',
             method: 'GET',
             path: '/api/event/fake_user?page=1',
             port: 8081,
@@ -53,7 +53,7 @@ describe('lib/RequestBuilder', () => {
                 Authorization: 'Bearer abc',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            hostName: '10.10.10.10',
+            hostname: '10.10.10.10',
             method: 'GET',
             path: '/api/event/fake_user',
             port: 8081,
@@ -81,7 +81,7 @@ describe('lib/RequestBuilder', () => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "Content-Length": 18
             },
-            hostName: '10.10.10.10',
+            hostname: '10.10.10.10',
             method: 'POST',
             path: '/api/event?page=190',
             port: 8081,
