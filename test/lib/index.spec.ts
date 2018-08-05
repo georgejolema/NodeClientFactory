@@ -12,7 +12,7 @@ describe('lib/index', () => {
     let fakeApply:any;
 
     beforeEach(() => {
-        fakeApply = sandbox.spy();
+        fakeApply = sandbox.stub().resolves();
 
         const fake = class {
             apply = fakeApply;
@@ -44,9 +44,9 @@ describe('lib/index', () => {
         expect(client.login).to.be.a('function');
     });
 
-    it('should call the request performer sending request object and params', () => {
+    it('should call the request performer sending request object and params', async () => {
         const client: any = clientFactory(descriptor);
-        client.addEvent({
+        await client.addEvent({
             accessToken: 'abc',
             page: '3',
             type: 'fake',
@@ -67,9 +67,9 @@ describe('lib/index', () => {
         }, 'type=fake&value=fake1')).to.be.true;
     });
 
-    it('should call the request performer sending request object and params using post', () => {
+    it('should call the request performer sending request object and params using post', async () => {
         const client: any = clientFactory(descriptor);
-        client.login({
+        await client.login({
             userName: 'abc',
             password: 'fake1'
         });
