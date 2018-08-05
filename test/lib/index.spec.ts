@@ -9,9 +9,11 @@ describe('lib/index', () => {
     let sandbox = sinon.createSandbox();;
     let fraudster:any;
     let clientFactory:any;
-    let fakeApply = sandbox.spy();;
+    let fakeApply:any;
 
-    before(() => {
+    beforeEach(() => {
+        fakeApply = sandbox.spy();
+
         const fake = class {
             apply = fakeApply;
         };
@@ -28,12 +30,9 @@ describe('lib/index', () => {
         clientFactory = require('./../../lib').default;
     });
 
-    after(() => {
+    afterEach(() => {
         fraudster.deregisterMock('./HttpRequest');
         fraudster.disable();
-    })
-
-    afterEach(() => {
         sandbox.restore();
     })
 
