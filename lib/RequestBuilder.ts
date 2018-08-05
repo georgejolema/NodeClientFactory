@@ -56,13 +56,14 @@ export default class RequestBuilder {
         if (query) {
             path += '?' + query;
         }
+
+        const headers = <MapRequest<string | number>>JSON.parse(rawRequestHeader);
+        
         // compile body
         const bodyCollection = this.Params.filter((param) => param.type === ParamType.BODY);
-        const body = queryString.stringify(parser.pairConfigDefinition(bodyCollection, params));
-
-        // edit header
+        const body = this.formatBody(<string>headers['Content-Type'], parser.pairConfigDefinition(bodyCollection, params));
         
-        const headers = <MapRequest<string | number>>JSON.parse(rawRequestHeader);
+        // edit header       
         if (this.method !== 'GET' && body != '') {
             headers['Content-Length'] = Buffer.byteLength(body);
         }       
@@ -77,6 +78,19 @@ export default class RequestBuilder {
         };
 
         return { request, body };
+    }
+
+    private formatBody(contentType: string, body: any) {
+        if (!contentType) {
+            return JSON.stringify(body);
+        }
+
+        if (contentType === 'application/x-www-form-urlencoded') {
+            return queryString.stringify(body);
+        } else {
+            return JSON.stringify(body);
+        }
+
     }
 
 }

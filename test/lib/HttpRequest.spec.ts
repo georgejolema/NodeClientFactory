@@ -50,7 +50,6 @@ describe('/lib/HttpRequest', () => {
                     });
                     done();
                 }).catch((err) => {
-                    console.log(err);
                     done();
                 });
             });
@@ -73,7 +72,7 @@ describe('/lib/HttpRequest', () => {
             it('should return a promise', (done) => {
                 request.apply(requestMock).catch((response) => {
                     expect(response).to.be.deep.equal({
-                        value: '',
+                        value: 'internal error',
                         code: 500,
                         message: 'error'
                     });
@@ -121,8 +120,7 @@ describe('/lib/HttpRequest', () => {
                         });
                         done();
                     }).catch((err) => {
-                        console.log(err);
-                        done();
+                        done(err);
                     });
             });
         });        
@@ -157,9 +155,7 @@ describe('/lib/HttpRequest', () => {
 
         it('should return a promise', () => {
             return request.apply(requestMock)
-                .then((response) => {
-                    console.log(response);
-                }).catch((err) => {
+                .catch((err) => {
                     expect(err).to.be.equal('something awful happened');
                 });
         });

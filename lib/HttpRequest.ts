@@ -8,14 +8,13 @@ export default class HttpRequest {
                 let rawBody = '';
 
                 httpRes.on('data', (data) => {
-                    if (httpRes.statusCode === 200) {
-                        rawBody += data;
-                    }
+                    rawBody += data;
                 });
 
                 httpRes.on('end', () => {
                     const statusCode = httpRes.statusCode || 500;
-                    if (rawBody !== '' || (statusCode < 400 && statusCode > 599)) {
+
+                    if (statusCode < 400 || statusCode > 600) {
                         resolve({
                             value: rawBody,
                             code: httpRes.statusCode,
@@ -28,9 +27,7 @@ export default class HttpRequest {
                             message: 'error'
                         });
                     }
-                });
-
-               
+                });               
             });
 
             httpReq.on('error', (e) => {
