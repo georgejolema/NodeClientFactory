@@ -68,7 +68,7 @@ describe('lib/index', () => {
         }, 'type=fake&value=fake1')).to.be.true;
     });
 
-    it('should call the request performer sending request object and params', () => {
+    it('should call the request performer sending request object and params using post', () => {
         const client: any = clientFactory(descriptor);
         client.login({
             userName: 'abc',
